@@ -340,8 +340,8 @@ class BaseTrainer:
         epoch = self.start_epoch
         while True:
             self.epoch = epoch
-            self.run_callbacks("on_train_epoch_start")
             self.model.train()
+            self.run_callbacks("on_train_epoch_start")
             if RANK != -1:
                 self.train_loader.sampler.set_epoch(epoch)
             pbar = enumerate(self.train_loader)
