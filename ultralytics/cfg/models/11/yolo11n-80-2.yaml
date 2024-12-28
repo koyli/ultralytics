@@ -2,6 +2,7 @@
 # YOLO11 object detection model with P3-P5 outputs. For Usage examples see https://docs.ultralytics.com/tasks/detect
 
 # Parameters
+nc: 82
 nca: 80 # number of classes model 1
 ncb: 2  # number of classes model 2
 
