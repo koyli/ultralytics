@@ -45,11 +45,11 @@ head:
   - [-1, 2, C3k2, [1024, True]] # 22 (P5/32-large)
 
   # layer 23 - head of first model
-  - [[16, 19, 22], 1, Detect, [nc]] # Detect(P3, P4, P5)
+  - [[16, 19, 22], 1, Detect, [nc_orig]] # Detect(P3, P4, P5)
 
   # layer 24 - new classes we added.
   - [[16, 19, 22], 1, Detect, [added_classes]] # Detect(P3, P4, P5) #24 new classes
 
   # ConcatHead takes in layer 23 and 24 and concatenates the output.
-  - [[23, 24], 1, ConcatHead, [nc, added_classes]] # Concat #23 and #24
+  - [[23, 24], 1, ConcatHead, [nc_orig, added_classes]] # Concat #23 and #24
   
